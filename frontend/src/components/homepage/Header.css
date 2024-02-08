@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid lightgray;
+  height: 100vh;
+  position: fixed;
+  width: 18%;
+}
+
+.instaLogo {
+  display: none;
+}
+
+.logo img {
+  width: 50%;
+  margin: 10%;
+}
+
+.logo input {
+  display: none;
+}
+
+.top-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.top-icons span {
+  font-size: 17px;
+}
+
+.top-icons button,
+.bottom-icons button {
+  margin: 6%;
+  border: none;
+  background-color: white;
+}
+
+.bottom-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+@media (min-width: 1450px) {
+  .header {
+    width: 12%;
+  }
+}
+
+
+@media (max-width: 1030px) {
+  .header {
+    width: 8%;
+  }
+
+  .logo img {
+    display: none;
+  }
+
+  .instaLogo , .igIcon {
+    display: block;
+    font-size: 40px;
+  }
+
+  .top-icons button span , .bottom-icons button span {
+    display: none;
+  }
+
+  .top-icons {
+    align-items: center;
+    height: 80%;
+  }
+
+  .bottom-icons {
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 28px;
+    margin-bottom: 60%;
+  }
+
+  .igIcon {
+    margin: 80% 0;
+    font-size: 28px;
+  }
+
+}
+
+
+@media (max-width: 770px) {
+  .header {
+    width: 10%;
+  }
+}
+
+@media (max-width: 430px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-right: none;
+    height: 8%;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .logo input {
+    display: block;
+  }
+  
+  .instaLogo , .dIcon {
+    display: none;
+  }
+
+  .bottom-icons {
+    display: none;
+    width: 0;
+  }
+  
+  .logo img {
+    display: block;
+    width: 30%;
+    margin: 0 2%;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .logo input {
+    border: none;
+    background-color: rgb(240, 233, 233);
+    width: 80%;
+  }
+  
+  .top-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon {
+    font-size: 22px;
+    margin-top: 19%;
+  }
+  
+  .top-icons button,
+  .bottom-icons button {
+    margin: 0;
+    font-size: 0;
+    border: none;
+    background-color: white;
+  }
+  
+  .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 376px) {
+  .icon {
+    margin-top: 21%;
+  }
+
+  .logo input {
+    width: 90%;
+  }
+}

@@ -1,0 +1,118 @@
+.post {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-left {
+  display: flex;
+  gap: 3%;
+  width: 90%;
+}
+
+.details-left img {
+  width: 32px;
+  height: 32px;
+  margin-top: 2%;
+  margin-left: 1%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details-right {
+  margin-top: 3%;
+  margin-right: 2%;
+}
+
+.content img {
+  width: 100%;
+}
+
+.like-share-save {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-share button , .save button {
+  font-size: 25px;
+  border: none;
+  background-color: white;
+}
+
+.post-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.like-count p {
+  margin: 4% 0;
+}
+
+.caption {
+  width: 100%;
+  display: flex;
+  gap: 1%;
+}
+
+.caption p {
+  margin: 1% 0;
+}
+
+.post-footer-content button {
+  border: none;
+  background-color: white;
+  color: rgb(97, 93, 93);
+  padding: 1% 0;
+  font: 12px;
+}
+
+
+.add-comment {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 0;
+  border-bottom: 1px solid lightgray ;
+}
+
+.left-add-comment {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-add-comment input {
+  border: none;
+  outline: none;
+}
+
+.post-button {
+  border: none;
+  background-color: white;
+  color: rgb(44, 168, 209);
+}
+
+
+@media (min-width: 1450px) {
+  .post {
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 430px) {
+  .post {
+    width: 100%;
+  }
+
+  
+
+  .post-footer-content , .add-comment {
+    margin-left: 2%;
+  }
+}
+

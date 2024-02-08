@@ -1,0 +1,44 @@
+# Node.js files
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# Production build
+dist/
+
+# Dependency directory (yarn or npm). Note that the yarn.lock (or package-lock.json) file should be committed
+# if you are working with others on the same project
+# Change this if you are using npm
+yarn-error.log
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Mac specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*/

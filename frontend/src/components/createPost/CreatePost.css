@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+.createPostForm {
+  width: 30%;
+  height: 50vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createPostForm h2 {
+  background-color: white;
+}
+
+.drop-zone {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.drop-zone p {
+  font-size: 25px;
+  background-color: white;
+  margin: 2% 0;
+}
+
+.gallery-icon {
+  font-size: 40px;
+  background-color: white;
+}
+
+.image-preview {
+  max-width: 200px; /* Maximum width */
+  max-height: 200px; /* Maximum height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.form-caption {
+  margin: 2%;
+  display: flex;
+}
+
+.form-caption input {
+  padding: 2% 4%;
+  border-radius: 5px;
+}
+
+.form-caption button {
+  background-color: rgb(21, 175, 226);
+  color: aliceblue;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 1025px) {
+  .createPostForm {
+    width: 50%;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 425px) {
+  .createPostForm {
+    width: 100%;
+    height: 60vh;
+    border: none;
+  }
+}

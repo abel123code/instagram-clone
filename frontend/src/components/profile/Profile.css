@@ -1,0 +1,199 @@
+.profile-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.profile-phone {
+  display: none;
+}
+
+.profile-container {
+  width: 82%;
+  margin-left: 18%;
+}
+
+.inner-profile-container {
+  width: 80%;
+  height: 100%;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 2% 5%;
+}
+
+.profile-top {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+}
+
+.pfp-logo {
+  width: 30%;
+}
+
+.post-container-profile {
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3 , 1fr);
+  gap: 1%;
+}
+
+.post-container-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pfp-logo form {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.pfp-logo form img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.pd-top {
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  font-size: 23px;
+}
+
+.pd-top button {
+  padding: 1% 2%;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  font-weight: 600;
+}
+
+
+.pd-mid {
+  display: flex;
+  gap: 4%;
+
+}
+
+.pd-mid p {
+  margin-top: 0;
+}
+
+@media (min-width: 1450px) {
+  .profile-container {
+    width: 88%;
+    margin-left: 12%;
+  }
+  .inner-profile-container {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}
+
+@media (max-width: 1025px) {
+  .profile-container {
+    width: 92%;
+    margin-left: 8%;
+  }
+}
+
+@media (max-width: 770px) {
+  .profile-container {
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  .inner-profile-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .profile-page {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    width: 100%;
+    height: 100%;
+    margin: 24% 0 0 0;
+  }
+  
+  .inner-profile-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    padding: 0;
+  }
+  
+  .profile-top {
+    display: none;
+  }
+
+  .profile-phone {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .phone-top {
+    display: flex;
+    width: 100%;
+    gap: 5%;
+  }
+
+  .ph-profile-pic img {
+    height: 77px;
+    width: 77px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .ph-acc-details {
+    width: 80%;
+  }
+  .phone-button {
+    display: flex;
+    gap: 3%;
+  }
+
+  .phone-button button {
+    padding: 1% 2%;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    font-weight: 600;
+  }
+  
+}
+
+@media (max-width: 321px) {
+  .profile-phone {
+    width: 100%;
+  }
+}

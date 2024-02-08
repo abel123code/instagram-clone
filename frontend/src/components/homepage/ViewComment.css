@@ -1,0 +1,273 @@
+.viewComment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-image-phone {
+  display: none;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 2%;
+  align-items: center;
+  height: 7%;
+}
+
+.captionAndComments {
+  height: 78%;
+}
+
+.VC-like-share-comment-save {
+  height: 5%;
+}
+
+.viewLikeCount {
+  height: 5%;
+}
+
+.addComment {
+  height: 5%;
+}
+
+.x-button {
+  height : 4%;
+  width: 100%;
+}
+
+.x-button button {
+  position:absolute;
+  top:0;
+  right: 0;
+  font-size: 23px;
+  background-color: rgba(0,0,0, 0.01);
+  color: white;
+  margin-right: 1%;
+}
+
+.post-container {
+  width: 100%;
+  height: 96%;
+}
+
+.post-inner-container {
+  width: 80%;
+  height: 95%;
+  margin: 0 auto;
+  display: flex;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.post-image {
+  width: 60%;
+}
+
+.post-content {
+  width: 40%;
+  
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+.top-header-left {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+
+.top-header-left img , 
+.viewCaption img , 
+.viewAllComments img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.follow-vc {
+  color: rgb(44, 168, 209);
+}
+
+.top-header-left p , 
+.viewCaptionUsername , 
+.viewCommentsUsername {
+  font-weight: bolder;
+}
+
+
+
+.viewCaption {
+  padding: 1% 2%;
+  display: flex;
+  gap: 3%;
+  align-items: center;
+}
+
+.viewAllComments {
+  padding: 1% 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3%;
+}
+
+.indiv-comment {
+  display: flex;
+  gap: 3%;
+  width: 100%;
+  align-items: center;
+}
+
+.VC-like-share-comment-save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+
+.VC-like-share-comment-save button {
+  font-size: 20px;
+}
+
+.VC-like-share-comment {
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.viewLikeCount p {
+  padding: 0 2%;
+  margin: 0;
+  font-weight: bolder;
+}
+
+.addComment {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 3%;
+  font-size: 25px;
+  padding: 1% 2%;
+}
+
+.addComment input {
+  border: none;
+  outline: none;
+}
+
+
+@media (min-width: 1450px) {
+  .post-inner-container {
+    width: 70%;
+  }
+
+  .VC-like-share-comment {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+}
+
+@media (max-width: 1025px) {
+  .post-inner-container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 770px) {
+  .post-inner-container {
+    height: 60%;
+    margin-top: 10%;
+  }
+
+  .captionAndComments {
+    height: 75%;
+  }
+
+  .top-header {
+    height: 9%;
+  }
+
+  .top-header , .viewCaption , .viewAllComments {
+    padding: 1% 3%;
+  }
+
+  .top-header-left img , 
+  .viewCaption img , 
+  .viewAllComments img {
+  width: 30px;
+  height: 30px;
+  }
+
+  .VC-like-share-comment {
+    width: 35%;
+  }
+
+  .viewLikeCount {
+    font-size: 13px;
+  }
+
+  .addComment {
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .post-inner-container {
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+  }
+
+  .captionAndComments {
+    width: 100%;
+    height: 84%;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .viewCaption {
+    border-bottom: 1px solid lightgray;
+  }
+
+  .post-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  .VC-like-share-comment-save {
+    padding-top: 1%;
+  }
+
+  .top-header , .post-image {
+    display: none;
+  }
+  
+}
+
+
+
+
+

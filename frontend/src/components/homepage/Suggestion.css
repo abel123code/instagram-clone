@@ -1,0 +1,56 @@
+
+.suggested-MyInfo {
+  width: 80%;
+  margin: 8% auto;
+}
+
+.my-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-myinfo img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.left-myinfo {
+  width: 90%;
+  display: flex;
+  gap: 5%;
+}
+
+.right-myinfo button {
+  border: none;
+  background-color: white;
+  color:  rgb(44, 168, 209);
+}
+
+.suggested-fy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fy-left {
+  color: rgb(126, 123, 123);
+}
+
+.fy-right button {
+  background-color: white;
+  border: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  margin-left: 0;
+}
+
+.footer p , .copyright p {
+  font-size: 13px;
+  color: lightgray;
+}

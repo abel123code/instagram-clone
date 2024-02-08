@@ -1,0 +1,29 @@
+.acc-suggested img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.acc-suggested {
+  display: flex;
+  justify-content: space-between;
+  margin: 3% 0;
+}
+
+.acc-suggested-left {
+  display: flex;
+  gap: 5%;
+  width: 90%;
+}
+
+.acc-suggested-left p {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.acc-suggested-right p {
+  color: rgb(44, 168, 209);
+  font-weight: bolder;
+  font-size: 13px;
+}
