@@ -8,8 +8,8 @@ on:
     paths:
       - 'backend/**'
 
-jobs:
-  build:
+jobs:  # Ensure this is correctly aligned
+  test:
     runs-on: ubuntu-latest
 
     services:
@@ -17,20 +17,31 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+          MYSQL_DATABASE: test_db
         ports:
           - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -p3306 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '14'
+
     - name: Install dependencies
       run: npm install
       working-directory: ./backend
+
+    - name: Initialize Database Schema
+      run: mysql -h 127.0.0.1 -u root --password=${{ secrets.SQL_PASSWORD }} test_db < ../database/schema.sql
+      
+
     - name: Run tests
       run: npm test
       working-directory: ./backend
-      env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }} 
