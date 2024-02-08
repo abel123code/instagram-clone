@@ -40,7 +40,7 @@ jobs:  # Ensure this is correctly aligned
       working-directory: ./backend
 
     - name: Initialize Database Schema
-      run: mysql -h 127.0.0.1 -u root --password=${{ secrets.SQL_PASSWORD }} test_db < ../database/schema.sql
+      run: mysql -h 127.0.0.1 -u root --password=${{ secrets.SQL_PASSWORD }} test_db < ./database/schema.sql
       
 
     - name: Run tests
