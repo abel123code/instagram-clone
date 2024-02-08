@@ -15,20 +15,26 @@ beforeAll(async () => {
   }
 })
 
-//removal of test value after testing is complete 
 afterAll(async () => {
   try {
     await db.query('DELETE FROM users WHERE username = ?', ['testUser']);
-    // Properly close the database connection
-    await new Promise((resolve, reject) => {
-      db.end(err => {
-        if (err) return reject(err);
-        resolve();
+    // Check if the connection can be closed
+    if (db && db.end) {
+      await new Promise((resolve, reject) => {
+        db.end((err) => {
+          if (err) {
+            console.error('Failed to close the database connection:', err);
+            return reject(err); // Handle the error as you see fit
+          }
+          resolve();
+        });
       });
-    });
+    }
   } catch (err) {
     console.error('Teardown failed:', err);
-    // Handle cleanup errors, possibly re-throwing to indicate failure
+    // Depending on your test framework's behavior, you might want to throw the error to ensure
+    // the teardown failure is noted. In some cases, you might log the error and not throw,
+    // to avoid affecting subsequent tests or teardown steps.
     throw err;
   }
 });

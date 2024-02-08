@@ -3,10 +3,10 @@ const mysql = require('mysql');
 
 //establish db connection 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
   password: process.env.SQL_PASSWORD,
-  database: "instagramreact",
+  database: process.env.DB_NAME,
   port: 3306
 });
 
