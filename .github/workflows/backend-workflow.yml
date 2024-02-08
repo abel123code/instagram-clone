@@ -46,3 +46,8 @@ jobs:  # Ensure this is correctly aligned
     - name: Run tests
       run: npm run test:ci
       working-directory: ./backend
+      env: 
+        MYSQL_HOST: localhost
+        MYSQL_USER: root
+        MYSQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+        MYSQL_DATABASE: test_db

@@ -19,7 +19,13 @@ beforeAll(async () => {
 afterAll(async () => {
   try {
     await db.query('DELETE FROM users WHERE username = ?', ['testUser']);
-    db.end();
+    // Properly close the database connection
+    await new Promise((resolve, reject) => {
+      db.end(err => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
   } catch (err) {
     console.error('Teardown failed:', err);
     // Handle cleanup errors, possibly re-throwing to indicate failure
