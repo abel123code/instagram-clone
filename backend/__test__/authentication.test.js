@@ -46,8 +46,9 @@ describe('Testing if Login method code is valid', () => {
       .send({
       username: 'testUser',
       password: 'testPassword'
-      });
-
+      })
+      
+      
     expect(response.body).toHaveProperty('token')
   })
 
