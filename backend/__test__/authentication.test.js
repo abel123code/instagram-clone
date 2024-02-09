@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../index');
+const {app,server} = require('../index');
 const bcrypt = require('bcrypt');
 const db = require('../db')
 
@@ -32,10 +32,23 @@ afterAll(async () => {
     }
   } catch (err) {
     console.error('Teardown failed:', err);
-    // Depending on your test framework's behavior, you might want to throw the error to ensure
-    // the teardown failure is noted. In some cases, you might log the error and not throw,
-    // to avoid affecting subsequent tests or teardown steps.
     throw err;
+  }
+
+
+  // Shut down the server
+  if (server && server.close) {
+    await new Promise((resolve, reject) => {
+      server.close((err) => {
+        if (err) {
+          console.error('Failed to close the server:', err);
+          reject(err);
+        } else {
+          console.log('Server shut down successfully.');
+          resolve();
+        }
+      });
+    });
   }
 });
 

@@ -41,9 +41,11 @@ jobs:  # Ensure this is correctly aligned
 
     - name: Initialize Database Schema
       run: sudo mysql --host=127.0.0.1 --user=root --password=${{ secrets.SQL_PASSWORD }} instagramreact < ./database/schema.sql
+
     - name: Verify Database Initialization
       run: |
         echo "SHOW TABLES;" | sudo mysql --host=127.0.0.1 --user=root --password=${{ secrets.SQL_PASSWORD }} instagramreact
+        
     - name: Run tests
       run: npm run test:ci
       working-directory: ./backend
