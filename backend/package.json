@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --ci --detectOpenHandles",
+    "test:watch": "jest --watch",
     "start": "nodemon app"
   },
   "jest": {

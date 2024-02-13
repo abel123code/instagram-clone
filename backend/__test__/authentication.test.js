@@ -53,7 +53,7 @@ afterAll(async () => {
 });
 
 describe('Testing if Login method code is valid', () => {
-  test('It responds with a JSON token for valid login credentials', async () => {
+  test('Given successful login with correct credentials', async () => {
     const response = await request(app)
       .post('/')
       .send({
@@ -62,20 +62,20 @@ describe('Testing if Login method code is valid', () => {
       })
       
       
-    expect(response.body).toHaveProperty('token')
+    expect(response.status).toBe(201)
   })
 
   //for invalid password/username
   const testScenarios = [
     {
-      description: 'Wrong password',
+      description: 'Given wrong password',
       requestData: {
         username: 'testUser',
         password: 'wrongPassword',
       },
     },
     {
-      description: 'Wrong username',
+      description: 'Given wrong username',
       requestData: {
         username: 'nonExistentUser',
         password: 'testPassword',

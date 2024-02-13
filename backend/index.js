@@ -384,7 +384,7 @@ app.post('/' , (req,res) => {
         id: user.id,
         username: user.username
       }, 'YourSecretKey')
-      res.json({ token });
+      return res.status(201).json({ token });
       //console.log('token: ' , token);  
     } else {
       res.status(401).send('incorrect credentials')
