@@ -19,10 +19,14 @@ jobs:  # Ensure this is correctly aligned
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.SQL_PASSWORD }}
           MYSQL_DATABASE: instagramreact
+          MYSQL_HOST: ${{ secrets.DB_HOST }}
+          MYSQL_USER: ${{ secrets.DB_USER }}
+          MYSQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
         ports:
-          - 3306:3306
+          - 3306/tcp
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -p3306 --silent"
+          --name=mysql-master
+          --health-cmd="mysqladmin ping"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5

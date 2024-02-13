@@ -16,43 +16,42 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
-  try {
-    await db.query('DELETE FROM users WHERE username = ?', ['testUser']);
-    // Check if the connection can be closed
-    if (db && db.end) {
-      await new Promise((resolve, reject) => {
-        db.end((err) => {
-          if (err) {
-            console.error('Failed to close the database connection:', err);
-            return reject(err); // Handle the error as you see fit
-          }
-          resolve();
-        });
-      });
-    }
-  } catch (err) {
-    console.error('Teardown failed:', err);
-    throw err;
-  }
-
-
-  // Shut down the server
-  if (server && server.close) {
-    await new Promise((resolve, reject) => {
-      server.close((err) => {
-        if (err) {
-          console.error('Failed to close the server:', err);
-          reject(err);
-        } else {
-          console.log('Server shut down successfully.');
-          resolve();
-        }
-      });
+  // Delete test user from database
+  await new Promise((resolve, reject) => {
+    db.query('DELETE FROM users WHERE username = ?', ['testUser'], (err, result) => {
+      if (err) {
+        console.error('Cleanup failed:', err);
+        return reject(err);
+      }
+      resolve(result);
     });
-  }
+  });
+
+  // Properly close the database connection
+  await new Promise((resolve, reject) => {
+    db.end((err) => {
+      if (err) {
+        console.error('Failed to close the database connection:', err);
+        return reject(err);
+      }
+      resolve();
+    });
+  });
+
+  // Close the server to release the port it's listening on
+  await new Promise((resolve, reject) => {
+    server.close((err) => {
+      if (err) {
+        console.error('Failed to close server:', err);
+        return reject(err);
+      }
+      resolve();
+    });
+  });
 });
 
-describe('Testing if Login method code is valid', () => {
+
+describe('Testing if Login route', () => {
   test('Given successful login with correct credentials', async () => {
     const response = await request(app)
       .post('/')
